@@ -1,0 +1,155 @@
+﻿<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>食事処 酒肴 浅草 水口（ご提案サンプル）</title>
+<style>
+  :root{
+    --charcoal:#171a22; --soot:#1e222d; --panel:#262b38;
+    --ember:#e0703f; --flame:#b8442a; --cream:#f3e9da; --mute:#a4977f;
+    --line:rgba(232,161,60,.22);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--charcoal); color:var(--cream); font-family:"Yu Gothic","Yu Gothic UI",Meiryo,sans-serif; line-height:1.9; letter-spacing:.04em; overflow-x:clip;}
+  .serif{ font-family:"Yu Mincho","Hiragino Mincho ProN",serif;}
+
+  .sample-band{ position:fixed; top:0; left:0; right:0; z-index:50; background:var(--ember); color:#231a08;
+    font-size:11px; font-weight:700; text-align:center; padding:4px 8px; letter-spacing:.15em;}
+
+  /* HERO */
+  .hero{ min-height:100svh; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;
+    background:
+      radial-gradient(60% 45% at 50% 108%, rgba(201,106,37,.5), transparent 70%),
+      radial-gradient(38% 26% at 50% 102%, rgba(232,161,60,.55), transparent 70%),
+      linear-gradient(180deg, #0e0b08 0%, var(--charcoal) 55%);}
+  .hero::after{ content:""; position:absolute; inset:0;
+    background-image:radial-gradient(rgba(232,161,60,.13) 1px, transparent 1.5px); background-size:26px 26px; opacity:.35;}
+  .hero-inner{ position:relative; z-index:2; display:flex; gap:clamp(20px,6vw,64px); align-items:center; justify-content:center; padding:72px 20px 96px; width:100%; max-width:720px;}
+  .tate{ writing-mode:vertical-rl; text-orientation:upright; font-size:clamp(15px,2.6vw,20px); color:var(--ember);
+    letter-spacing:.5em; border-right:1px solid var(--line); padding-right:14px; height:min(46svh,340px);}
+  @media (max-width:599px){
+    .hero-inner{ flex-direction:column-reverse; gap:30px; }
+    .tate{ writing-mode:horizontal-tb; height:auto; border-right:none; border-top:1px solid var(--line);
+      padding:14px 0 0; font-size:13px; letter-spacing:.35em; text-align:center;}
+  }
+  .hero-title{ text-align:center;}
+  .hero-title .mark{ font-size:12px; letter-spacing:.6em; color:var(--mute); margin-bottom:14px;}
+  h1{ font-size:clamp(34px,9.5vw,80px); font-weight:600; letter-spacing:.1em; line-height:1.15; text-indent:.1em;}
+  h1 small{ display:block; font-size:clamp(12px,3vw,17px); color:var(--ember); letter-spacing:.3em; margin-top:12px;}
+  .hero-meta{ margin-top:26px; font-size:12.5px; color:var(--mute); display:flex; gap:18px; justify-content:center; flex-wrap:wrap;}
+  .hero-meta span{ border:1px solid var(--line); padding:4px 14px; border-radius:99px;}
+
+  section{ padding:72px 22px; max-width:720px; margin:0 auto;}
+  .eyebrow{ color:var(--ember); font-size:12px; letter-spacing:.45em; margin-bottom:10px;}
+  h2{ font-size:clamp(24px,5.4vw,32px); font-weight:600; letter-spacing:.18em; margin-bottom:34px;}
+
+  .ph{ border:1px dashed rgba(232,161,60,.45); background:
+      radial-gradient(80% 120% at 20% 0%, rgba(201,106,37,.28), transparent 60%),
+      linear-gradient(160deg, var(--panel), #1c1710);
+    display:flex; align-items:center; justify-content:center; color:var(--mute); font-size:12px; letter-spacing:.2em; text-align:center; line-height:1.8;}
+
+  /* こだわり */
+  .kodawari{ display:grid; gap:16px;}
+  .kd{ background:var(--soot); border:1px solid var(--line); padding:26px 24px; display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:start;}
+  .kd .num{ font-size:26px; color:var(--ember); border-bottom:2px solid var(--flame); line-height:1.4;}
+  .kd h3{ font-size:16.5px; letter-spacing:.14em; margin-bottom:6px;}
+  .kd p{ font-size:13px; color:var(--mute);}
+
+  /* menu */
+  .menu-ph{ height:180px; margin-bottom:30px;}
+  .menu li{ list-style:none; display:flex; align-items:baseline; gap:10px; padding:13px 2px; border-bottom:1px solid rgba(243,233,218,.09); font-size:15px;}
+  .menu .dots{ flex:1; border-bottom:1px dotted rgba(243,233,218,.28); transform:translateY(-4px);}
+  .menu .price{ font-variant-numeric:tabular-nums; color:var(--ember);}
+  .menu .note{ font-size:11px; color:var(--mute); display:block; letter-spacing:.06em;}
+  .signature{ margin-top:38px; background:var(--soot); border:1px solid var(--line); padding:26px 24px;}
+  .signature .tag{ color:var(--ember); font-size:11px; letter-spacing:.4em;}
+  .signature h3{ font-size:20px; letter-spacing:.16em; margin:8px 0 6px;}
+  .signature p{ font-size:13px; color:var(--mute);}
+
+  /* info */
+  .info dl{ display:grid; grid-template-columns:96px 1fr; font-size:14px;}
+  .info dt{ color:var(--ember); padding:13px 0; border-bottom:1px solid rgba(243,233,218,.09); letter-spacing:.2em;}
+  .info dd{ padding:13px 0; border-bottom:1px solid rgba(243,233,218,.09);}
+  .map-ph{ height:200px; margin-top:26px;}
+
+  /* CTA */
+  .cta-fixed{ position:fixed; bottom:0; left:0; right:0; z-index:40; display:flex; box-shadow:0 -8px 28px rgba(0,0,0,.5);}
+  .cta-fixed a{ flex:1; text-align:center; padding:16px 8px; font-size:15px; letter-spacing:.22em; text-decoration:none; font-weight:700;}
+  .cta-tel{ background:linear-gradient(135deg,var(--flame),var(--ember)); color:#241806;}
+  .cta-ig{ background:#0f0c08; color:var(--cream); border-top:1px solid var(--line);}
+  footer{ padding:56px 22px 120px; text-align:center; color:var(--mute); font-size:11.5px; line-height:2;}
+  footer .biz{ color:var(--ember); letter-spacing:.3em; font-size:12.5px; margin-bottom:8px;}
+  @media (prefers-reduced-motion: no-preference){
+    .fade{ animation:up .8s ease backwards;}
+    @keyframes up{ from{opacity:0; transform:translateY(14px);} }
+    .d1{animation-delay:.1s} .d2{animation-delay:.25s}
+  }
+</style>
+
+<div class="sample-band">ご提案用サンプル（お写真・文言は仮です）</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="tate serif fade d2">浅草六区、七十五年つづく家庭の味。</div>
+    <div class="hero-title">
+      <div class="mark serif">ASAKUSA SHOKUDO SINCE 1950</div>
+      <h1 class="serif fade">食事処 酒肴 浅草 水口<small>— 創業七十五年・水口食堂 —（ご提案サンプル）</small></h1>
+      <div class="hero-meta fade d1">
+        <span>10:00 – 20:30</span><span>水曜定休</span><span>つくばEX浅草駅 徒歩1分</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="eyebrow serif">こだわり</div>
+  <h2 class="serif">三つの約束</h2>
+  <div class="kodawari">
+    <div class="kd"><div class="num serif">壱</div><div><h3>昭和25年から、浅草六区で</h3><p>創業七十五年。地元の常連さんにも観光のお客さまにも愛されてきた、浅草の定食屋です。</p></div></div>
+    <div class="kd"><div class="num serif">弐</div><div><h3>メニューは100種類以上</h3><p>まぐろ刺身とまぐろぶつ切は開店以来人気のサービス品。日替わりもございます。</p></div></div>
+    <div class="kd"><div class="num serif">参</div><div><h3>コロッケは毎朝の手作り</h3><p>懐かしい家庭の味として、数多くの本や雑誌に紹介されてきました。</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow serif">お品書き</div>
+  <h2 class="serif">お食事</h2>
+  <div class="ph menu-ph">こちらに焼き台・お料理のお写真が入ります<br>（掲載許可をいただいてから差し替え）</div>
+  <ul class="menu">
+    <li><span>いり豚定食（水口オリジナル）</span><span class="dots"></span><span class="price">1,030円</span></li>
+    <li><span>ミックスフライ定食</span><span class="dots"></span><span class="price">1,230円</span></li>
+    <li><span>まぐろ刺身定食</span><span class="dots"></span><span class="price">1,700円</span></li>
+    <li><span>手作りコロッケ定食</span><span class="dots"></span><span class="price">850円</span></li>
+    <li><span>あじフライ定食</span><span class="dots"></span><span class="price">930円</span></li>
+  </ul>
+  <div class="signature">
+    <div class="tag serif">看板メニュー</div>
+    <h3 class="serif">名物 いり豚</h3>
+    <p>迷ったらこれ。開店以来の水口オリジナル。単品630円／定食1,030円。</p>
+  </div>
+</section>
+
+<section class="info">
+  <div class="eyebrow serif">ご案内</div>
+  <h2 class="serif">店舗情報</h2>
+  <dl>
+    <dt>住所</dt><dd>〒111-0032 東京都台東区浅草2-4-9</dd>
+    <dt>営業時間</dt><dd>10:00 – 20:30（L.O. 20:00）</dd>
+    <dt>定休日</dt><dd>水曜定休</dd>
+    <dt>お席</dt><dd>1階36席／2階24席＋座敷30席（ご宴会承ります）</dd>
+    <dt>お支払い</dt><dd>現金 ほか（お店の情報に合わせて記載します）</dd>
+  </dl>
+  <div class="ph map-ph">こちらに Googleマップ が入ります</div>
+</section>
+
+<footer>
+  <div class="biz serif">食事処 酒肴 浅草 水口 — 創業七十五年・水口食堂 —（ご提案サンプル）</div>
+  このページはホームページのご提案用サンプルです。<br>
+  実際の店名・お写真・メニュー・地図に差し替えて、このまま公開できます。<br>
+  制作・運用：藤田 勝（株式会社ASA）
+</footer>
+
+<div class="cta-fixed">
+  <a class="cta-tel" href="tel:0338442725">📞 電話で予約する</a>
+  <a class="cta-ig" href="#">Instagram</a>
+</div>
