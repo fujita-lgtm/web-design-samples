@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ヤマト運輸株式会社様 エグゼクティブサマリー</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Meiryo", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    width: 241.4mm; zoom: 0.87;
+    color: #333; background: #fff;
+    padding: 7mm 12mm 4mm;
+    font-size: 9pt; line-height: 1.45;
+  }
+
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .header-top .to { font-size: 9.5pt; color: #444; letter-spacing: .05em; padding-top: 1mm; }
+  .header-top .meta { text-align: right; font-size: 7.8pt; color: #666; line-height: 1.5; }
+  .header-top .meta b { color: #1f3864; font-size: 8.2pt; }
+  h1 { font-size: 18pt; color: #1f3864; letter-spacing: .02em; margin: 1.5mm 0 2.8mm; font-weight: bold; }
+
+  .band {
+    background: #1f3864; color: #fff; border-radius: 2mm;
+    padding: 3.8mm 8mm 3.4mm; margin-bottom: 4.5mm;
+  }
+  .band .line1 { font-size: 9pt; letter-spacing: .05em; margin-bottom: 2mm; }
+  .band .line2 { font-size: 14pt; font-weight: bold; letter-spacing: .03em; }
+  .band .line2 .big { font-size: 20pt; color: #f4a53c; padding-left: 2mm; }
+  .band .line2 .arrow { margin: 0 3mm; font-size: 11pt; font-weight: normal; }
+  .band .line3 { font-size: 7.8pt; opacity: .85; margin-top: 2mm; }
+
+  h2 { font-size: 12pt; color: #1f3864; margin: 0 0 2.6mm; letter-spacing: .1em; font-weight: bold; }
+  h2 .num { margin-right: 4mm; }
+  .sec { margin-bottom: 3.2mm; }
+  .sec:last-child { margin-bottom: 0; }
+
+  /* 01 導入の全体像 */
+  .flow { display: flex; align-items: stretch; margin-bottom: 2.5mm; }
+  .step {
+    flex: 1; border-radius: 1.5mm; padding: 2.2mm 2mm 2mm; text-align: center;
+    background: #f5f5f7; border: 0.35mm solid #d8d8dc; position: relative;
+  }
+  .step .t { font-size: 9.2pt; font-weight: bold; color: #555; }
+  .step .s { font-size: 7.2pt; color: #888; margin-top: .6mm; }
+  .step.done .t { color: #1f3864; }
+  .step.now { background: #fbe5d6; border: 0.5mm solid #ed7d31; }
+  .step.now .t { color: #1f3864; font-size: 9.6pt; }
+  .step.now .s { color: #b45309; }
+  .step .badge {
+    position: absolute; top: -2.6mm; left: 50%; transform: translateX(-50%);
+    background: #ed7d31; color: #fff; font-size: 6.8pt; font-weight: bold;
+    padding: .3mm 2.5mm; border-radius: 2mm; white-space: nowrap;
+  }
+  .flow-arrow { display: flex; align-items: center; padding: 0 1.8mm; color: #b0b5bd; font-size: 10pt; }
+  .flow-note { font-size: 8.3pt; color: #444; margin-bottom: 2.5mm; }
+  .flow-note b { color: #1f3864; }
+
+  .trial-strip {
+    background: #f5f5f7; border: 0.35mm solid #e0e0e4; border-radius: 1.5mm;
+    padding: 1.6mm 4mm; font-size: 8.3pt; color: #444;
+    display: flex; align-items: center; gap: 3mm;
+  }
+  .trial-strip .tag { font-weight: bold; color: #1f3864; white-space: nowrap; }
+  .trial-strip .num { font-size: 12pt; font-weight: bold; color: #ed7d31; }
+  .trial-strip .ref { margin-left: auto; font-size: 7.4pt; color: #888; white-space: nowrap; }
+
+  /* 02 本研修の概要 */
+  .spec-card {
+    background: #eaf0f9; border: 0.35mm solid #c5d5eb; border-radius: 2mm;
+    padding: 3mm 5mm;
+  }
+  table.spec { width: 100%; border-collapse: collapse; }
+  table.spec td { font-size: 8.4pt; padding: 1.1mm 2mm 1.1mm 0; vertical-align: top; color: #444; }
+  table.spec td.k {
+    width: 13%; font-weight: bold; color: #1f3864; white-space: nowrap;
+    border-left: 0.8mm solid #1f3864; padding-left: 2.5mm;
+  }
+  table.spec td.v { width: 37%; padding-right: 6mm; }
+  table.spec td b { color: #1f3864; }
+  table.spec td .yen { font-size: 11pt; font-weight: bold; color: #ed7d31; }
+  .custom-note { color: #c00000; font-weight: bold; font-size: 7.8pt; }
+
+  /* 03 料金試算 */
+  .lead { font-size: 9.3pt; font-weight: bold; color: #ed7d31; margin-bottom: 2.2mm; }
+  table.price { width: 100%; border-collapse: collapse; margin-bottom: 2.2mm; }
+  table.price th {
+    background: #1f3864; color: #fff; font-size: 8.6pt; font-weight: bold;
+    padding: 1.8mm 3mm; text-align: center; letter-spacing: .05em;
+  }
+  table.price td {
+    font-size: 9pt; padding: 1.35mm 4mm; border-bottom: 0.25mm solid #dcdfe4;
+    text-align: right; color: #555;
+  }
+  table.price td:first-child { text-align: left; }
+  table.price tr.sub td { color: #333; font-weight: bold; }
+  table.price tr.sub td:last-child { color: #ed7d31; }
+  .notes { font-size: 7.5pt; color: #666; line-height: 1.42; }
+  .notes b { color: #333; }
+
+  /* 04 スケジュール */
+  .warn { font-size: 9.2pt; font-weight: bold; color: #ed7d31; margin-bottom: 1.8mm; }
+  .gantt-wrap { position: relative; }
+  .gantt-wrap .deadline-line {
+    position: absolute; top: 0; bottom: 7mm; right: 0;
+    border-right: 0.5mm dashed #ed7d31;
+  }
+  .gantt { width: 100%; border-collapse: collapse; }
+  .gantt th {
+    font-size: 7.8pt; color: #666; font-weight: normal; text-align: center;
+    border-bottom: 0.3mm solid #c5c9d0; padding-bottom: 1mm; width: 10%;
+  }
+  .gantt th:first-child { width: 20%; text-align: left; }
+  .gantt td { padding: .85mm 0; font-size: 8pt; vertical-align: middle; border-left: 0.2mm solid #eceef1; }
+  .gantt td.label, .gantt td:first-child { border-left: none; }
+  .gantt td.label { font-weight: bold; color: #1f3864; padding-right: 2mm; font-size: 8.2pt; }
+  .gantt .label-sub { font-size: 6.8pt; color: #777; font-weight: normal; line-height: 1.4; margin-top: .3mm; }
+  .bar { height: 4.2mm; border-radius: 2.1mm; color: #fff; font-size: 7.2pt; line-height: 4.2mm; padding: 0 2.5mm; white-space: nowrap; }
+  .bar.o { background: #ed7d31; }
+  .bar.n { background: #1f3864; }
+  .bar.ln { background: #2e5288; }
+  .dl-label { font-size: 7.8pt; color: #ed7d31; font-weight: bold; text-align: right; padding-top: .5mm; }
+  .foot-notes { font-size: 7.5pt; color: #666; line-height: 1.45; margin-top: 1mm; }
+</style>
+</head>
+<body>
+
+<div class="header-top">
+  <div class="to">ヤマト運輸株式会社 御中</div>
+  <div class="meta">2026年8月12日<br><b>株式会社パンハウス</b><br>営業担当　藤田 勝</div>
+</div>
+<h1>生成AI研修　エグゼクティブサマリー</h1>
+
+<div class="band">
+  <div class="line1">ご提案の構成　―　選抜15〜30名の本研修（2ヶ月）　※詳細は 02・03 をご参照ください</div>
+  <div class="line2">定価 600〜1,200万円<span class="arrow">→</span>助成申請成功時の実質負担<span class="big">300〜600万円</span></div>
+</div>
+
+<div class="sec">
+  <h2><span class="num">01</span>導入の全体像　―　今回ご判断いただくのは「本研修（2ヶ月）」のみです</h2>
+  <div class="flow">
+    <div class="step done"><div class="t">トライアル研修 ✓</div><div class="s">8/5 実施済み・約20名</div></div>
+    <div class="flow-arrow">▶</div>
+    <div class="step now"><div class="badge">今回ご判断いただく範囲</div><div class="t">本研修（2ヶ月）</div><div class="s">90分×全8回・選抜15〜30名</div></div>
+    <div class="flow-arrow">▶</div>
+    <div class="step"><div class="t">ワークショップ</div><div class="s">3〜6回・実務への定着</div></div>
+    <div class="flow-arrow">▶</div>
+    <div class="step"><div class="t">成果報告会</div><div class="s">成果の共有・全国展開の判断</div></div>
+  </div>
+  <div class="flow-note">全工程をパンハウスが伴走支援する形が最も効果的ですが、<b>ワークショップ以降は本研修で育成したメンバーを中心に貴社内での自走実施も可能</b>です。まずは本研修（2ヶ月）のみご判断ください。</div>
+  <div class="trial-strip">
+    <span class="tag">トライアル研修の結果</span>
+    <span><span class="num">92%</span>　が「良かった」以上と評価</span>
+    <span><span class="num">69%</span>　が本研修への参加意欲あり</span>
+    <span class="ref">※事後アンケート13名回答。詳細は別紙「トライアル研修 実施結果サマリー」</span>
+  </div>
+</div>
+
+<div class="sec">
+  <h2><span class="num">02</span>本研修の概要</h2>
+  <div class="spec-card">
+    <table class="spec">
+      <tr>
+        <td class="k">形式</td><td class="v">90分 × 全8回（計12時間）／オンライン／約2ヶ月</td>
+        <td class="k">対象</td><td class="v">東日本ブロック 営業・システム設計メンバーから<b>各グループ2〜3名を選抜（15〜30名想定）</b>。修了者を起点に全国展開へ</td>
+      </tr>
+      <tr>
+        <td class="k">環境</td><td class="v">貴社で利用可能な <b>Gemini／NotebookLM の範囲内</b>で完結</td>
+        <td class="k">題材</td><td class="v"><b>RFP・物量データ分析 → 物流スキーム仮説 → コストシミュレーション → 提案書ドラフト</b>（3PL営業の実務そのもの）<br><span class="custom-note">※題材・カリキュラムは事前ヒアリングをもとに貴社の業務に合わせてカスタマイズします</span></td>
+      </tr>
+      <tr>
+        <td class="k">進め方</td><td class="v">スキル差はクラス分けで対応。クラスを分けても単価は変わりません</td>
+        <td class="k">費用</td><td class="v">1名あたり <span class="yen">40万円</span>（人材開発支援助成金 約50%適用時 実質約20万円）</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="sec">
+  <h2><span class="num">03</span>本研修の料金試算</h2>
+  <div class="lead">1名あたり実質 約20万円。人数が増えても単価は変わりません。</div>
+  <table class="price">
+    <tr><th>受講人数</th><th>定価合計</th><th>実質負担</th><th>助成金でカバーされる額</th></tr>
+    <tr><td>5名（最小構成）</td><td>200万円</td><td>100万円</td><td>100万円</td></tr>
+    <tr class="sub"><td>10名</td><td>400万円</td><td>200万円</td><td>200万円</td></tr>
+    <tr class="sub"><td>15名</td><td>600万円</td><td>300万円</td><td>300万円</td></tr>
+    <tr class="sub"><td>20名</td><td>800万円</td><td>400万円</td><td>400万円</td></tr>
+    <tr class="sub"><td>30名</td><td>1,200万円</td><td>600万円</td><td>600万円</td></tr>
+  </table>
+  <div class="notes">
+    受講人数は柔軟にご調整いただけます（最小構成 5名）。<br>
+    助成金は訓練終了後に支給申請・審査を経て入金されます。ご契約時は定価でのお支払いです。<br>
+    助成率は大企業区分（約50%）で試算。確定額は正式なお見積書にてご提示します。
+  </div>
+</div>
+
+<div class="sec">
+  <h2><span class="num">04</span>助成金の期限から逆算すると、8月中の意思決定が必要です</h2>
+  <div class="warn">人材開発支援助成金は 2027年3月31日で終了予定。同じ予算で受けられる人数は、今期と来期で倍変わります。</div>
+  <div class="gantt-wrap">
+    <div class="deadline-line"></div>
+    <table class="gantt">
+      <tr>
+        <th></th><th>8月</th><th>9月</th><th>10月</th><th>11月</th><th>12月</th><th>1月</th><th>2月</th><th>3月</th>
+      </tr>
+      <tr>
+        <td class="label">意思決定</td>
+        <td><div class="bar o">〜 8/31</div></td>
+        <td colspan="7"></td>
+      </tr>
+      <tr>
+        <td class="label">ご説明・ご契約</td>
+        <td></td>
+        <td><div class="bar n">9月上旬</div></td>
+        <td colspan="6"></td>
+      </tr>
+      <tr>
+        <td class="label">事前準備<div class="label-sub">アンケート／ヒアリング／カリキュラム構築／スケジュール調整</div></td>
+        <td></td>
+        <td colspan="2"><div class="bar ln">1〜2ヶ月</div></td>
+        <td colspan="5"></td>
+      </tr>
+      <tr>
+        <td class="label">計画届の提出</td>
+        <td colspan="2"></td>
+        <td><div class="bar n">開始1ヶ月前まで</div></td>
+        <td colspan="5"></td>
+      </tr>
+      <tr>
+        <td class="label">受講（全8回）</td>
+        <td colspan="3"></td>
+        <td colspan="3"><div class="bar n">11月上旬〜1月上旬・約2ヶ月</div></td>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td class="label">支給申請</td>
+        <td colspan="5"></td>
+        <td colspan="3"><div class="bar ln">終了後2ヶ月以内</div></td>
+      </tr>
+    </table>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:.5mm;">
+      <div class="foot-notes" style="margin-top:0;">支給申請は訓練終了日の翌日から2ヶ月以内。上記が実質的な最終スケジュールです。計画届・支給申請は弊社が書類準備からサポートします。</div>
+      <div class="dl-label" style="padding-top:0; white-space:nowrap; margin-left:4mm;">2027/3/31 助成金終了</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
